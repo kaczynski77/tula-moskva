@@ -1,5 +1,5 @@
 {
-  "name": "gulp-template-for-html-css-sass-js",
+  "name": "gulp-template-for-html-css-sass",
   "version": "4.0.2",
   "description": "An automation template for HTML, CSS, Sass, and JavaScript.",
   "main": "gulpfile.js",
@@ -22,11 +22,7 @@
   "author": "Roy Vanegas",
   "license": "ISC",
   "contributors": [
-    {
-      "name": "Roy Vanegas",
-      "email": "roy@thecodeeducators.com",
-      "url": "http://roy.vanegas.org"
-    }
+    "Roy Vanegas <roy@thecodeeducators.com> (http://roy.vanegas.org)"
   ],
   "bugs": {
     "url": "https://github.com/code-warrior/gulp-template-for-html-css-sass-js/issues"
