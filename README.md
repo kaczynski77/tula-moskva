@@ -29,4 +29,3 @@ For production-ready projects, run `build`, which creates a folder called `prod`
 watch(`dev/styles/**/*.css`, lintCSS)
     .on(`change`, reload);
 ```
-# gulp-starter
