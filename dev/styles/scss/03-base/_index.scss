@@ -9,3 +9,206 @@
 //
 @import 'reset';
 @import 'body';
+
+a,
+abbr,
+address,
+article,
+aside,
+audio,
+b,
+blockquote,
+body,
+canvas,
+caption,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+section,
+samp,
+small,
+span,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+ul,
+var,
+video {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: baseline;
+    font: inherit;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    font-family: 'Gilroy', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+
+    &::before,
+    &::after {
+        content: none;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+   2. Remove default margin
+ */
+* {
+    margin: 0;
+    font-family: 'Gilroy', sans-serif;
+}
+
+/*
+   3. Allow percentage-based heights in the application
+ */
+html,
+body {
+    height: 100%;
+}
+
+/*
+   Typographic tweaks!
+   4. Add accessible line-height
+   5. Improve text rendering
+ */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+   6. Improve media defaults
+ */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+   7. Remove built-in form typography styles
+ */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+   8. Avoid text overflows
+ */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+   9. Create a root stacking context
+ */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+
+// a text decorations for links
+
+a {
+    text-decoration: none;
+}

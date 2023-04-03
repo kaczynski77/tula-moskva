@@ -45,6 +45,9 @@
     "sass": "^1.42.1"
   },
   "dependencies": {
+    "gulp-concat": "^2.6.1",
+    "gulp-inline-fonts": "^1.2.1",
+    "merge-stream": "^2.0.0",
     "stylelint": "^13.13.1"
   }
 }

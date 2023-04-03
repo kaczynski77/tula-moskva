@@ -4,3 +4,1416 @@
 // Larger layout items that contain base elements are styled here. BEM is a good
 // example.
 //
+
+.no-scroll {
+    overflow: hidden;
+}
+
+
+.modal {
+    //absolute center modal
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: #FFFFFF;
+    width: 722px;
+    min-height: 592px;
+    border-radius: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__content {
+        display: flex;
+        max-width: 450px;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    &__close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 27px;
+        height: 27px;
+        cursor: pointer;
+        background-image: url(../img/cross.svg);
+        background-size: contain;
+    }
+
+    &__title {
+        margin-top: 43px;
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 164.02%;
+        /* identical to box height, or 59px */
+        height: 59px;
+        text-align: center;
+        color: #000000;
+
+    }
+
+    &__subtitle {
+        margin-top: 2px;
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 164.02%;
+        /* identical to box height, or 30px */
+
+
+        color: #515050;
+        margin-bottom: 29px;
+    }
+
+    &__input {
+        border: 1px solid #515050;
+        border-radius: 6px;
+        width: 450px;
+        height: 41px;
+        padding-left: 14px;
+
+        &:focus {
+            outline: none;
+        }
+
+        &-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+            width: 100%;
+        }
+    }
+
+    &__label {
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: right;
+
+        color: #000000;
+        margin-bottom: 6px;
+
+    }
+
+    &__submit {
+        border: none;
+        margin-top: 26px;
+        width: 100%;
+        display: flex;
+        min-width: 100%;
+        justify-content: center;
+    }
+
+    .check {
+        margin-right: 12px;
+        background-image: url(../img/check-modal.svg);
+        width: 16px;
+        height: 15px;
+        display: flex;
+        background-size: contain;
+    }
+
+    .underline {
+        text-decoration: underline;
+        color: #141B57;
+        cursor: pointer;
+    }
+
+    .privacy-checkbox {
+        display: flex;
+
+        &__label {
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            /* identical to box height */
+
+
+            color: #898989;
+
+        }
+    }
+
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.btn {
+    user-select: none;
+    display: flex;
+    max-width: fit-content;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 164.02%;
+    /* identical to box height, or 33px */
+
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: #000000;
+    background: #FFFFFF;
+
+    border-radius: 10px;
+    padding: 13.5px 70.5px;
+
+    cursor: pointer;
+
+    &--yellow {
+        background: #FEC601;
+        box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
+
+    }
+
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: content-box;
+}
+
+.hero {
+    padding-top: 28px;
+    padding-bottom: 105px;
+    opacity: 0;
+
+    &::after {
+        content: '';
+        display: flex;
+        background: url(../img/bg-hero.png) no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        max-height: 750px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &__top {
+        display: flex;
+    }
+
+    &__nav {
+        display: flex;
+        max-width: 657px;
+        width: 100%;
+        justify-content: space-between;
+
+        &-link {
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 164.02%;
+            /* identical to box height, or 33px */
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+    }
+
+    &__phone {
+        margin-left: auto;
+
+        &-link {
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 164.02%;
+            /* identical to box height, or 33px */
+            color: #FFFFFF;
+
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: '';
+                display: inline-block;
+                background: url(../img/icon-phone.svg) no-repeat;
+                background-size: contain;
+                width: 19.89px;
+                height: 19.93px;
+                margin-right: 13.11px;
+
+            }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        gap: 32px
+    }
+
+    &__card {
+        width: 100%;
+        max-width: 390px;
+        height: 283px;
+
+        background: rgba(255, 255, 255, 0.87);
+        box-shadow: 0px 4px 59px rgba(104, 104, 104, 0.25);
+
+        padding-left: 41px;
+
+
+        &-icon {
+            display: flex;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+
+        }
+
+        &-title {
+            display: flex;
+
+            margin-bottom: 9px;
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 164.02%;
+            /* or 33px */
+
+            text-transform: uppercase;
+
+            color: #000000;
+        }
+
+        &-text {
+            display: flex;
+
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 164.02%;
+            /* or 30px */
+        }
+
+        &--bus {
+            .hero__card {
+                &-icon {
+                    background-image: url(../img/icon-bus.png);
+                    width: 63px;
+                    height: 39px;
+                    margin-top: 27px;
+                    margin-bottom: 32px;
+                }
+
+                &-title {
+                    max-width: 218px;
+                }
+
+                &-text {
+                    max-width: 218px;
+                }
+            }
+        }
+
+        &--comfort {
+            .hero__card {
+                &-icon {
+                    background-image: url(../img/icon-comfort.png);
+                    width: 49px;
+                    height: 49px;
+                    margin-top: 22px;
+                    margin-bottom: 27px;
+                }
+
+                &-title {
+                    max-width: 218px;
+
+                }
+
+                &-text {
+                    max-width: 260px;
+                }
+            }
+
+        }
+
+        &--pay {
+            .hero__card {
+                &-icon {
+
+                    background-image: url(../img/icon-pay.png);
+                    width: 45px;
+                    height: 45px;
+                    margin-top: 24px;
+                    margin-bottom: 29px;
+
+                }
+
+                &-title {
+                    max-width: 159px;
+                }
+
+                &-text {
+                    max-width: 253px;
+                }
+            }
+        }
+
+    }
+
+    &__title {
+        margin-top: 113px;
+        max-width: 678px;
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 48px;
+        line-height: 138.02%;
+        /* or 66px */
+        color: #FFFFFF;
+
+    }
+
+    &__subtitle {
+        margin-top: 12px;
+        max-width: 424px;
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 164.02%;
+        /* or 33px */
+
+
+        color: #FFFFFF;
+    }
+
+    .btn {
+        margin-top: 36px;
+    }
+
+    &__bottom {
+        margin-top: 140px;
+    }
+}
+
+.main {
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 32px;
+
+        .filler {
+            flex: 1;
+            border-bottom: 1px solid #C8C8C8;
+        }
+
+        &-link {
+            width: 100%;
+            max-width: 392px;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 19px;
+            cursor: pointer;
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 164.02%;
+            /* identical to box height, or 33px */
+
+            text-align: center;
+            text-transform: uppercase;
+
+            color: rgba(0, 0, 0, 0.61);
+
+
+            border-bottom: 1px solid #C8C8C8;
+
+            &.active {
+                border-bottom: 1px solid #FEC601;
+                font-family: 'Gilroy';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 164.02%;
+                /* identical to box height, or 33px */
+
+                text-transform: uppercase;
+
+                color: #000000;
+
+
+            }
+        }
+    }
+
+    &__block {
+        padding-top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+
+        &-title {
+            width: 100%;
+
+
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 164.02%;
+            /* identical to box height, or 59px */
+
+
+            color: #000000;
+
+
+        }
+
+        &--schedule {
+
+            [data-schedule-route="from-tula"] {
+                .schedule-card__route-title {
+                    margin-bottom: 12px;
+                }
+
+
+            }
+
+            [data-schedule-route="from-moscow"] {
+
+
+                .schedule-card__route-title {
+                    &--first {
+                        margin-bottom: 12px;
+                    }
+
+                    &--second {
+                        margin-bottom: 14px;
+                    }
+                }
+
+                .schedule-card__sunday {
+                    padding-bottom: 26px;
+                }
+
+            }
+
+            .main__block-title {
+                margin-bottom: 40px;
+            }
+
+            display: flex;
+            flex-wrap: wrap;
+
+            .left-side {
+                display: flex;
+                max-width: 705px;
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .right-side {
+                display: flex;
+                opacity: 0;
+
+                .map {
+
+                    display: flex;
+                    min-width: 530px;
+                    width: 100%;
+                    background-image: url(.../img/map.png);
+                    min-height: 370px;
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+
+            .route {
+                margin-top: 40px;
+                display: flex;
+                align-items: center;
+
+                &__label {
+
+                    font-family: 'Gilroy';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 164.02%;
+                    /* identical to box height, or 30px */
+
+                    margin-right: 119px;
+                    color: #515050;
+                }
+
+                &__select {
+                    display: flex;
+                    width: 100%;
+                    max-width: 416px;
+                    position: relative;
+                }
+
+                &__selected {
+                    border-radius: 6.66667px;
+                    max-height: 51.8px;
+                    overflow: hidden;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: 15px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 19px;
+                        height: 9px;
+                        background-image: url(../img/chevron-down.svg);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+
+                    }
+                }
+
+                &__selected,
+                &__list-item {
+                    width: 419px;
+                    user-select: none;
+                    font-family: 'Gilroy';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 164.02%;
+                    /* identical to box height, or 33px */
+                    color: #515050;
+                    padding-top: 9px;
+                    padding-bottom: 8px;
+                    padding-left: 30px;
+                    cursor: pointer;
+
+                    border: 1px solid #000000;
+
+
+
+                    &:hover {
+                        // rgba  #FEC601;
+                        background-color: rgba(254, 198, 1, 0.1);
+
+
+                    }
+                }
+
+                &__list {
+                    position: absolute;
+                    display: none;
+                    flex-direction: column;
+                    background-color: #FFFFFF;
+
+                    &-item {
+
+
+                        //is first
+                        &:first-child {
+                            border-top-left-radius: 6.66667px;
+                            border-top-right-radius: 6.66667px;
+                            border-bottom: none;
+                        }
+
+                        &:nth-child(3) {
+                            border-top: none;
+
+                        }
+
+                        //is last
+                        &:last-child {
+                            border-top: none;
+                            border-bottom-left-radius: 6.66667px;
+                            border-bottom-right-radius: 6.66667px;
+                        }
+
+                    }
+
+                    &.active {
+                        display: flex;
+                    }
+                }
+            }
+
+            .price {
+                margin-top: 52px;
+                display: flex;
+                align-items: center;
+
+                &__label {
+                    @extend .route__label;
+                    margin-right: 35px;
+                }
+
+                &__value {
+                    font-family: 'Gilroy';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 164.02%;
+                    /* or 33px */
+                    color: #000000;
+                    padding-top: 6px;
+                    padding-bottom: 5px;
+                    padding-left: 30px;
+                    padding-right: 30px;
+                    background: rgba(254, 198, 1, 0.66);
+                    border-radius: 6.66667px;
+                }
+            }
+
+            .info {
+                margin-top: 68px;
+
+                &__text {
+                    display: flex;
+                    max-width: 530px;
+                    font-family: 'Gilroy';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 164.02%;
+                    /* or 30px */
+
+
+                    color: #141B57;
+
+
+                }
+            }
+
+            .buy-ticket {
+                margin-top: 40px;
+                display: flex;
+
+                &__text {
+
+                    font-family: 'Gilroy';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 164.02%;
+                    /* or 30px */
+                    margin-left: 22px;
+                    max-width: 245px;
+                    color: #7E7A7A;
+                }
+            }
+
+            .schedule {
+
+
+                &-card {
+                    opacity: 0;
+                    display: flex;
+                    width: 100%;
+                    min-height: 426px;
+                    flex-direction: column;
+                    background-image: url(../img/bg-schedule-card.png);
+                    background-size: cover;
+
+
+                    padding-top: 26px;
+                    padding-left: 29px;
+                    padding-right: 34px;
+
+                    &--first {
+                        margin-top: 90px;
+                    }
+
+                    &--second {
+                        margin-top: 34px;
+                        background-image: url(../img/bg-schedule-card-2.png);
+                        min-height: 379px;
+
+                        .schedule-card__time-block {
+                            max-width: none;
+
+                        }
+                    }
+
+
+                    &__top {
+                        display: flex;
+                        width: 100%;
+
+                    }
+
+                    &__route {
+                        width: 100%;
+
+                        &-title {
+                            display: flex;
+                            font-family: 'Gilroy';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 164.02%;
+                            /* identical to box height, or 30px */
+
+
+                            color: #000000;
+
+                            &--first {
+                                margin-top: 19px;
+                                display: flex;
+                            }
+
+                            &--second {
+                                margin-top: 28px;
+                                display: flex;
+                            }
+
+                            &--sunday {
+                                display: flex;
+                                width: 100%;
+                                margin-top: 13px;
+                            }
+
+                            &--first,
+                            &--second {
+                                &::before {
+                                    content: '';
+                                    width: 16px;
+                                    height: 19px;
+                                    margin-right: 14px;
+                                    background-image: url(../img/icon-bus.svg);
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
+                                    margin-top: 3px;
+                                }
+                            }
+
+                        }
+
+
+
+                        &-top {
+                            width: 100%;
+                        }
+                    }
+
+                    &__time-block {
+                        display: flex;
+                        gap: 9px;
+                        max-width: 791px;
+                        flex-wrap: wrap;
+                    }
+
+                    &__time {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        min-width: 88px;
+                        max-width: 88px;
+                        min-height: 40px;
+
+                        border: 1px solid #000000;
+                        border-radius: 6.66667px;
+
+
+
+                        font-family: 'Gilroy';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 164.02%;
+                        /* identical to box height, or 30px */
+
+
+                        color: #000000;
+
+
+                        &--sunday {
+                            margin-top: 1px;
+                        }
+                    }
+
+                    &__title {
+                        font-family: 'Gilroy';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 20px;
+                        line-height: 164.02%;
+                        /* identical to box height, or 33px */
+                        color: #000000;
+                    }
+
+                    &__date {
+                        display: flex;
+                        align-items: center;
+                        font-family: 'Gilroy';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 20px;
+                        line-height: 164.02%;
+                        /* identical to box height, or 33px */
+
+                        text-align: right;
+
+                        color: #000000;
+                        margin-left: auto;
+
+                        &::before {
+                            content: '';
+                            width: 16px;
+                            height: 16px;
+                            margin-right: 15px;
+                            background-image: url(../img/icon-time.svg);
+                            background-repeat: no-repeat;
+                            background-size: cover;
+
+                        }
+                    }
+
+                    .sunday {
+                        display: flex;
+                        width: 100%;
+                        flex-wrap: wrap;
+
+
+                    }
+
+                }
+
+                &__bottom-text {
+
+                    display: flex;
+                    margin-top: 21px;
+
+                    padding-bottom: 90px;
+                }
+            }
+
+
+
+        }
+
+        &--tickets {
+            .cards {
+                display: flex;
+                gap: 35px;
+                width: 100%;
+
+            }
+
+            .card {
+                display: flex;
+                flex-wrap: wrap;
+                min-height: 238.5px;
+                width: 100%;
+                max-width: 390px;
+                background: #FFFFFF;
+                justify-content: center;
+                position: relative;
+                align-items: flex-start;
+
+                margin-top: 92px;
+
+                &__text {
+                    width: 100%;
+                    margin-top: 75px;
+                    display: flex;
+                    max-width: 319px;
+                    text-align: center;
+
+                    font-family: 'Gilroy';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 164.02%;
+                    /* or 30px */
+
+                    text-align: center;
+
+                    color: #515050;
+
+
+                    &--smaller {
+                        max-width: 253px;
+                    }
+                }
+
+                &__icon {
+                    background-size: contain;
+
+                    &-holder {
+                        background: #FEC601;
+                        display: flex;
+                        width: 83px;
+                        height: 83px;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: -41.5px;
+                        z-index: 2;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    &--payment {
+                        width: 41px;
+                        height: 41px;
+                        background-image: url(.../img/icon-tickets-payment.png);
+                    }
+
+                    &--schedule {
+                        width: 40px;
+                        height: 40px;
+                        background-image: url(.../img/icon-tickets-calendar.png);
+                    }
+
+                    &--phone {
+                        width: 48px;
+                        height: 48px;
+                        background-image: url(.../img/icon-tickets-phone.png);
+                    }
+
+                }
+
+                &__top {
+                    height: 48.5px;
+                    display: flex;
+                    width: 100%;
+                }
+
+                &__body {
+                    box-shadow: 0px 4px 40px rgba(87, 86, 86, 0.25);
+                    height: 190px;
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    width: 390px;
+                    position: relative;
+                    overflow: hidden;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 97px;
+                        height: 97px;
+                        background: #FFFFFF;
+                        opacity: 0.5;
+                        z-index: 1;
+                        top: -48px;
+                        box-shadow: inset 0px 4px 80px rgba(0, 0, 0, 0.25);
+                        ;
+                        border-radius: 50%;
+                    }
+
+                }
+
+
+            }
+
+            .buy {
+                &-tickets {
+                    display: flex;
+                    gap: 32px;
+                    margin-bottom: 100px;
+
+                    .btn {
+
+
+                        &--first {
+                            max-width: 286px;
+                            padding-left: 25px;
+                            padding-right: 25px;
+
+                        }
+
+                        &--second {
+                            max-width: 324px;
+                            padding-left: 25.5px;
+                            padding-right: 25.5px;
+
+                        }
+                    }
+
+                }
+
+                &-card {
+
+                    display: flex;
+                    flex-wrap: wrap;
+                    max-width: 604px;
+                    width: 100%;
+                    padding-top: 40px;
+                    padding-bottom: 40px;
+                    background: rgba(254, 198, 1, 0.87);
+                    justify-content: center;
+
+                    &__title {
+                        font-family: 'Gilroy';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 20px;
+                        line-height: 164.02%;
+                        /* or 33px */
+
+                        text-align: center;
+
+                        color: #000000;
+                        width: 100%;
+                        margin-bottom: 24px;
+
+                        &--first {
+                            max-width: 365px;
+                        }
+
+                        &--second {
+                            max-width: 488px;
+                        }
+                    }
+
+                    &__price {
+                        text-align: center;
+                        width: 100%;
+                        margin-bottom: 25px;
+
+
+                    }
+
+
+                }
+            }
+
+
+        }
+
+        &--bus {
+
+            .container {
+                width: 100%;
+            }
+
+            .main__block-subtitle {
+                font-family: 'Gilroy';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 164.02%;
+                /* identical to box height, or 30px */
+
+                margin-top: 20px;
+                margin-bottom: 50px;
+                color: #515050;
+                display: flex;
+
+            }
+
+            .bus {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                &__info {
+                    font-family: 'Gilroy';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 164.02%;
+                    /* identical to box height, or 30px */
+                    color: #515050;
+
+                    &-bottom {
+                        display: flex;
+                        flex-wrap: wrap;
+                        max-width: 460px;
+                        margin-bottom: 121px;
+
+                        .bold {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                &__name {
+                    display: flex;
+                    margin-bottom: 40px;
+                }
+
+                li {
+                    max-width: 470px;
+                    margin-bottom: 50px;
+                    padding-left: 42px;
+                    position: relative;
+
+                    &:last-of-type {
+                        margin-bottom: 40px;
+                    }
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        width: 22px;
+                        height: 15px;
+                        left: 0;
+                        top: 6px;
+                        display: inline-block;
+                        margin-right: 20px;
+                        background-image: url(.../img/check.svg);
+                        background-size: contain;
+                    }
+                }
+
+                &__slider {
+                    display: flex;
+                    flex-wrap: wrap;
+                    max-width: 604px;
+                    padding-right: 20px;
+                    position: relative;
+
+                    .slide.hidden {
+                        display: none;
+                    }
+
+
+
+                    .arrow-right,
+                    .arrow-left {
+                        cursor: pointer;
+                        display: flex;
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 50%;
+                        background: rgba(149, 149, 149, 0.29);
+                        box-shadow: 0px 4px 31px rgba(0, 0, 0, 0.25);
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        top: calc(50% - 120px);
+                        right: -20px;
+
+                        &::after {
+                            display: flex;
+                            content: '';
+                            width: 16px;
+                            height: 32px;
+                            background-image: url(.../img/arrow-right.svg);
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            opacity: 0.43;
+                        }
+
+                        &.active {
+                            background: #FFFFFF;
+
+                            &::after {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    .arrow-left {
+                        left: -40px;
+
+                        &::after {
+                            transform: rotate(180deg);
+
+
+                        }
+                    }
+                }
+
+
+            }
+
+            .book-a-bus {
+                display: flex;
+                margin-bottom: 59px;
+
+                .buy-tip {
+                    max-width: 245px;
+                    display: flex;
+                    margin-left: 21px;
+                    font-family: 'Gilroy';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 164.02%;
+                    /* or 30px */
+
+
+                    color: #7E7A7A;
+                }
+            }
+
+            .btn {
+                max-width: 279px;
+                padding-left: 41px;
+                padding-right: 41px;
+            }
+
+
+        }
+    }
+
+}
+
+.footer {
+    opacity: 0;
+
+    &__top {
+        background-image: url(../img/bg-footer.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-top: 140px;
+        padding-bottom: 170px;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 769px;
+            height: 513px;
+            background-size: contain;
+            z-index: 1;
+            background-image: url(../img/footer-bus.png);
+            background-repeat: no-repeat;
+            right: 141px;
+            top: 0;
+        }
+
+        &-title {
+
+            display: flex;
+            max-width: 632px;
+
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 164.02%;
+            /* or 59px */
+            margin-bottom: 25px;
+
+            color: #FFFFFF;
+
+        }
+    }
+
+    &__bottom {
+        background: #141B57;
+        max-height: 214px;
+        overflow: hidden;
+        color: white;
+
+        &-tel {
+            margin-top: 7px;
+        }
+
+        &-left {
+
+
+            display: flex;
+            flex-direction: column;
+
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 164.02%;
+            /* identical to box height, or 33px */
+
+
+            color: #FFFFFF;
+        }
+
+        &-right {
+            margin-left: auto;
+        }
+
+        &-nav {
+            &-list {
+                display: flex;
+
+            }
+
+            &-item {
+                cursor: pointer;
+
+                a {
+                    font-family: 'Gilroy';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 164.02%;
+                    /* identical to box height, or 33px */
+
+
+                    color: #FFFFFF;
+                }
+
+                margin-right: 71px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+
+            }
+
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            height: 214px;
+            padding-top: 38px;
+
+        }
+
+        .copyright {
+            width: 100%;
+            text-align: center;
+
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 164.02%;
+            /* identical to box height, or 33px */
+
+
+            color: #FFFFFF;
+
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}

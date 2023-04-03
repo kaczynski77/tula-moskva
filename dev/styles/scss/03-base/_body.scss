@@ -12,6 +12,7 @@
  */
 * {
    margin: 0;
+   font-family: 'Gilroy', sans-serif;
 }
 
 /*
@@ -73,4 +74,14 @@ h6 {
 #root,
 #__next {
    isolation: isolate;
+}
+
+* {
+   font-family: 'Gilroy-400', sans-serif;
+}
+
+// a text decorations for links
+
+a {
+   text-decoration: none;
 }

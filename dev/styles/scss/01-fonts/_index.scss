@@ -6,3 +6,48 @@
 // @import url("http://fonts.googleapis.com/css?family=Hind:400,700&subset=latin,latin-ext");
 // @import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
 //
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/Gilroy-Bold.woff2") format("woff2"),
+        url("../fonts/Gilroy-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/Gilroy-Regular.woff2") format("woff2"),
+        url("../fonts/Gilroy-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/Gilroy-Medium.woff2") format("woff2"),
+        url("../fonts/Gilroy-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/Gilroy-ExtraBold.woff2") format("woff2"),
+        url("../fonts/Gilroy-ExtraBold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/Gilroy-SemiBold.woff2") format("woff2"),
+        url("../fonts/Gilroy-SemiBold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}

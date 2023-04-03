@@ -3,28 +3,405 @@
 
 <head>
    <meta charset="utf-8">
-   <title>A Gulp-based Template for HTML, CSS, Sass, and ES6 JS</title>
+   <title>Тула-Москва</title>
    <link rel="stylesheet" href="styles/main.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <!-- “defer” tells the browser to execute the script after the document has been parsed. -->
+   <script src="scripts/app.js" defer></script>
+   <link rel="preload" href="fonts/Gilroy-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+   <link rel="preload" href="fonts/Gilroy-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+   <link rel="preload" href="fonts/Gilroy-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+   <link rel="preload" href="fonts/Gilroy-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+   <link rel="preload" href="fonts/Gilroy-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+   <!-- standart viewport meta -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
 </head>
 
 <body>
-   <!-- bem -->
+   <div class="modal-overlay hidden"></div>
+
    <div class="wrapper">
       <section class="hero">
          <div class="container">
-            <div class="hero__nav">
-               <div class="">
-                  <a href="#" class="hero__nav-link">Home</a>
-                  <a href="#" class="hero__nav-link">About</a>
-                  <a href="#" class="hero__nav-link">Contact</a>
+            <div class="hero__top">
+               <div class="hero__nav">
+                  <a href="#" data-block="schedule" class="hero__nav-link">Расписание рейсов</a>
+                  <a href="#" data-block="tickets" class="hero__nav-link">Бронирование билетов</a>
+                  <a href="#" data-block="bus" class="hero__nav-link">Заказ автобуса</a>
+               </div>
+               <span class="hero__phone">
+                  <a href="tel:+79030398031" class="hero__phone-link">+7 (903) 039-80-31</a>
+               </span>
+            </div>
+            <h1 class="hero__title">ПАССАЖИРСКИЕ ПЕРЕВОЗКИ ТУЛА-МОСКВА</h1>
+            <p class="hero__subtitle">Предоставляем комфортабельные автобусы для Ваших поездок</p>
+
+            <span class="btn btn--yellow" data-block="tickets">
+               Купить билет
+            </span>
+
+            <div class="hero__bottom">
+               <div class="hero__card hero__card--bus">
+                  <span class="hero__card-icon "></span>
+                  <h3 class="hero__card-title">УДОБСТВО БРОНИРОВАНИЯ</h3>
+                  <p class="hero__card-text">Интуитивно понятная форма заказа билета</p>
+               </div>
+               <div class="hero__card hero__card--comfort">
+                  <span class="hero__card-icon "></span>
+                  <h3 class="hero__card-title ">Забота о вашем комфорте</h3>
+                  <p class="hero__card-text">Комфортабельные сидения, кондиционеры, аудио и видео системы, багажные
+                     отсеки</p>
+               </div>
+               <div class="hero__card hero__card--pay">
+                  <span class="hero__card-icon "></span>
+                  <h3 class="hero__card-title">без переплат за билеты</h3>
+                  <p class="hero__card-text">Билеты по привлекательным ценам</p>
                </div>
             </div>
+         </div>
+      </section>
+      <section class="main">
+         <div class="container">
+            <div class="main__nav">
+               <span data-block="schedule" class="main__nav-link active">Расписание рейсов</span>
+               <span class="filler"></span>
+               <span data-block="tickets" class="main__nav-link">Купить билет</span>
+               <span class="filler"></span>
+               <span data-block="bus" class="main__nav-link">Заказ автобуса</span>
+            </div>
+            <div data-block="schedule" class="main__block main__block--schedule">
+               <h2 class="main__block-title">РАСПИСАНИЕ АВТОБУСОВ ТУЛА-МОСКВА</h2>
+               <div class="left-side">
+                  <div class="route">
+                     <span class="route__label">Маршрут</span>
+                     <div class="route__select">
+                        <span class="route__selected">Выберите маршрут</span>
+                        <span class="route__list">
+                           <span class="route__list-item" data-value="tula-moscow-1">Ав.ст “Восточная” - ав.ст.
+                              “Орехово”
+                           </span>
+                           <span class="route__list-item" data-value="tula-moscow-2">Автовокзал - ст.
+                              “Новоясеневская”</span>
+                           <span class="route__list-item" data-value="moscow-tula-1">Ав.ст. “Орехово” -
+                              ав.ст “Восточная”
+                           </span>
+                           <span class="route__list-item" data-value="moscow-tula-2">ст. “Новоясеневская" -
+                              Автовокзал</span>
+                        </span>
+                     </div>
+                  </div>
+                  <div class="price">
+                     <span class="price__label">Стоимость поездки</span>
+                     <span class="price__value">750₽</span>
+                  </div>
+                  <div class="info">
+                     <p class="info__text">Уточнить информацию о маршрутах, билетах и расписании Вы можете по телефону:
+                        +7
+                        (903) 039-80-31</p>
+                  </div>
+                  <div class="buy-ticket">
+                     <span data-block="tickets" class="btn btn--yellow">Купить билет</span>
+                     <span class="buy-ticket__text">Звонки принимаются строго с 09-00 до 18-00</span>
+                  </div>
+               </div>
+               <div class="right-side">
+                  <span class="map"></span>
+               </div>
+               <div class="schedule-card schedule-card--first">
+                  <div class="schedule-card__top">
+                     <span class="schedule-card__title ">Рейс Тула-Москва</span>
+                     <span class="schedule-card__date">ЕЖЕДНЕВНО</span>
+                  </div>
+                  <div data-schedule-route="from-tula" class="schedule-card__route">
+                     <div class="schedule-card__route-top">
+                        <span class="schedule-card__route-title schedule-card__route-title--first">Ав.ст “Восточная” -
+                           ав.ст. “Орехово”, Шипиловский пр., 12</span>
+                     </div>
+                     <div class="schedule-card__time-block">
+                        <span class="schedule-card__time">05:00</span>
+                        <span class="schedule-card__time">06:00</span>
+                        <span class="schedule-card__time">07:00</span>
+                        <span class="schedule-card__time">11:00</span>
+                        <span class="schedule-card__time">12:30</span>
+                        <span class="schedule-card__time">15:30</span>
+                        <span class="schedule-card__time">17:00</span>
+                     </div>
+                     <div class="schedule-card__route-top">
+                        <span class="schedule-card__route-title schedule-card__route-title--second">Автовокзал, проспект
+                           Ленина 94 - ст. “Новоясеневская”, Новоясеневский тупик, 4</span>
+                     </div>
+                     <div class="schedule-card__time-block">
+                        <span class="schedule-card__time">05:00</span>
+                        <span class="schedule-card__time">6:30</span>
+                        <span class="schedule-card__time">7:15</span>
+                        <span class="schedule-card__time">8:45</span>
+                        <span class="schedule-card__time">9:30</span>
+                        <span class="schedule-card__time">11:00</span>
+                        <span class="schedule-card__time">11:45</span>
+                        <span class="schedule-card__time">13:15</span>
+                        <span class="schedule-card__time">14:00</span>
+                        <span class="schedule-card__time">15:40</span>
+                        <span class="schedule-card__time">16:15</span>
+                        <span class="schedule-card__time">18:20</span>
+                     </div>
+                  </div>
+                  <div class="schedule-card__sunday">
+                     <span class="schedule-card__route-title schedule-card__route-title--sunday">по воскресеньям:</span>
+                     <span class="schedule-card__time schedule-card__time--sunday">17:45</span>
+                  </div>
+               </div>
+               <div class="schedule-card schedule-card--second">
+                  <div class="schedule-card__top">
+                     <span class="schedule-card__title ">Рейс Москва-Тула</span>
+                     <span class="schedule-card__date">ЕЖЕДНЕВНО</span>
+                  </div>
+                  <div data-schedule-route="from-moscow" class="schedule-card__route">
+                     <div class="schedule-card__route-top">
+                        <span class="schedule-card__route-title schedule-card__route-title--first">
+                           Ав.ст. “Орехово”, Шипиловский пр.,
+                           12</span>
+                     </div>
+                     <div class="schedule-card__time-block">
+                        <span class="schedule-card__time">09:00</span>
+                        <span class="schedule-card__time">10:00</span>
+                        <span class="schedule-card__time">11:00</span>
+                        <span class="schedule-card__time">15:00</span>
+                        <span class="schedule-card__time">16:30</span>
+                        <span class="schedule-card__time">19:30</span>
+                        <span class="schedule-card__time">21:00</span>
+                     </div>
+                     <div class="schedule-card__route-top">
+                        <span class="schedule-card__route-title schedule-card__route-title--second">
+                           Ст. “Новоясеневская”, Новоясеневский тупик, 4</span>
+                     </div>
+                     <div class="schedule-card__time-block">
+                        <span class="schedule-card__time">09:00</span>
+                        <span class="schedule-card__time">11:15</span>
+                        <span class="schedule-card__time">12:45</span>
+                        <span class="schedule-card__time">13:30</span>
+                        <span class="schedule-card__time">15:00</span>
+                        <span class="schedule-card__time">15:45</span>
+                        <span class="schedule-card__time">17:15</span>
+                        <span class="schedule-card__time">18:00</span>
+                        <span class="schedule-card__time">19:30</span>
+                        <span class="schedule-card__time">20:15</span>
+                        <span class="schedule-card__time">22:30</span>
+                     </div>
+                     <div class="schedule-card__sunday">
+                        <span class="schedule-card__route-title schedule-card__route-title--sunday">по
+                           воскресеньям:</span>
+                        <span class="schedule-card__time schedule-card__time--sunday">21:45</span>
+                     </div>
+                  </div>
+               </div>
+
+               <span class="schedule__bottom-text">Автобусы подаются для посадки пассажиров за 10 минут до времени
+                  отправления</span>
+            </div>
+
+            <div data-block="tickets" class="main__block main__block--tickets hidden">
+               <h2 class="main__block-title">ПОКУПКА БИЛЕТОВ</h2>
+               <div class="cards">
+                  <div class="card">
+                     <div class="card__icon-holder">
+                        <span class="card__icon card__icon--payment"></span>
+                     </div>
+
+                     <div class="card__body">
+                        <p class="card__text">Выберите маршрут и посмотрите стоимость билета</p>
+                     </div>
+                  </div>
+                  <div class="card">
+                     <div class="card__icon-holder">
+                        <span class="card__icon card__icon--schedule"></span>
+                     </div>
+
+                     <div class="card__body">
+                        <p class="card__text">Посмотрите расписание автобусов и выберите подходящее время</p>
+                     </div>
+                  </div>
+                  <div class="card">
+                     <div class="card__icon-holder">
+                        <span class="card__icon card__icon--phone"></span>
+                     </div>
+                     <div class="card__body">
+                        <p class="card__text card__text--smaller">Позвоните нам!<br> Звонки принимаются строго с 9.00 до
+                           18.00</p>
+                     </div>
+                  </div>
+
+               </div>
+               <div class="buy-tickets">
+                  <div class="buy-card">
+                     <span class="buy-card__title buy-card__title--first">Тула, авт.вкз проспект Ленина, 94 / ав.ст.
+                        “Восточная”, Оборонная,
+                        83</span>
+                     <div class="buy-card__price">
+                        <span class="text">Стоимость поездки <span class="bold"> 750 ₽</span> </span>
+                     </div>
+                     <div class="buy-card__bottom">
+                        <span class="btn btn--first">Купить билет из Тулы</span>
+                     </div>
+                  </div>
+                  <div class="buy-card">
+                     <span class="buy-card__title buy-card__title--second">Москва, ст. “Новоясеневская” Новоясеневский
+                        тупик, 4 / ав.ст.
+                        “Орехово”, Шипиловский пр., 12</span>
+                     <div class="buy-card__price">
+                        <span class="text">Стоимость поездки <span class="bold"> 750 ₽</span> </span>
+                     </div>
+                     <div class="buy-card__bottom">
+                        <span class="btn btn--second">Купить билет из Москвы</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div data-block="bus" class="main__block main__block--bus hidden">
+
+               <div class="modal hidden">
+                  <div class="modal__content">
+                     <span class="modal__close"></span>
+                     <span class="modal__title">
+                        ЗАКАЖИТЕ АВТОБУС
+                     </span>
+                     <span class="modal__subtitle">
+                        Наш менеджер свяжется с Вами в ближайшее время
+                     </span>
+
+                     <form action="#" class="modal__form">
+                        <div class="modal__input-wrapper">
+                           <label class="modal__label">Имя</label>
+                           <input type="text" class="modal__input" name="name" placeholder="Вероника">
+                        </div>
+                        <div class="modal__input-wrapper">
+                           <label class="modal__label">E-mail</label>
+                           <input type="email" class="modal__input" placeholder="Введите вашу почту">
+                        </div>
+                        <div class="modal__input-wrapper">
+                           <label class="modal__label">Телефон</label>
+                           <input type="tel" class="modal__input" placeholder="+7">
+                        </div>
+
+                        <span class="privacy-checkbox">
+                           <span class="check"></span>
+                           <label class="privacy-checkbox__label">Я согласен на обработку <span
+                                 class="underline">персональных
+                                 данных</span></label>
+                        </span>
+                        <div class="modal__input-wrapper">
+                           <input type="submit" class="modal__submit btn btn--yellow" value="Заказать">
+                        </div>
+                     </form>
+                  </div>
+                  </div>
+                  <div class="container">
+                     <h2 class="main__block-title">ЗАКАЗ АВТОБУСА</h2>
+                     <span class="main__block-subtitle">Арендуйте комфортабельный автобус с водителем для Вашей поездки
+                        большой
+                        компанией!</span>
+                     <div class="bus">
+                        <div class="bus__info">
+                           <span class="bus__name"><span class="bold">Freightliner Sprinter</span></span>
+                           <ul>
+                              <li>
+                                 <span class="bold">18 комфортабельных мест,</span> оборудованных сиденьями с высокими
+                                 спинками и
+                                 ремнями безопасности для Вашего комфорта и безопасности
+                              </li>
+                              <li>
+                                 Автобус оборудован аудиосистемой, климат-контролем и телевизором
+                              </li>
+                              <li>
+                                 <span class="bold">Стоимость аренды</span> рассчитывается нами на основе почасовой
+                                 оплаты
+                                 или
+                                 оплаты по километражу
+                                 поездки
+                              </li>
+                           </ul>
+                           <div class="book-a-bus">
+                              <span class="btn btn--yellow">ЗАКАЗАТЬ АВТОБУС</span>
+                              <span class="buy-tip">Звонки принимаются строго с 09-00 до 18-00</span>
+                           </div>
+                           <span class="bus__info-bottom">
+                              По всем вопросам Вы можете обратиться по номеру: <span class="bold">+7 (903)
+                                 039-80-31</span>
+                           </span>
+
+                        </div>
+                        <div class="bus__slider">
+                           <span class="arrow-left"></span>
+                           <span class="slide">
+                              <img src="img/bus-1.png" alt="">
+                           </span>
+                           <span class="slide hidden">
+                              <img src="img/bus-1.png" alt="">
+                           </span>
+                           <span class="slide hidden">
+                              <img src="img/bus-1.png" alt="">
+                           </span>
+
+                           <span class="arrow-right active"></span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+         </div>
+      </section>
+      <section class="footer">
+         <div class="footer__top">
+            <div class="container">
+               <h2 class="footer__top-title">ЗАКАЖИТЕ АВТОБУС ДЛЯ ПОЕЗДКИ ПО РОССИИ СО СКИДКОЙ 10%
+               </h2>
+               <span data-block="tickets" class="btn btn--yellow">
+                  Купить билет
+               </span>
+            </div>
+         </div>
+         <div class="footer__bottom">
+            <div class="container">
+               <div class="footer__bottom-left">
+                  <span class="footer__bottom-title">Автобусы Тула-Москва</span>
+                  <span class="footer__bottom-tel">+7 (903) 039-80-31</span>
+               </div>
+               <div class="footer__bottom-right">
+                  <!-- nav -->
+                  <div class="footer__bottom-nav">
+                     <ul class="footer__bottom-nav-list">
+                        <li class="footer__bottom-nav-item"><a href="#" data-block="tickets"
+                              class="footer__bottom-nav-link">Купить билет</a>
+                        </li>
+                        <li class="footer__bottom-nav-item"><a href="#" data-block="bus"
+                              class="footer__bottom-nav-link">Заказ
+                              автобусов</a></li>
+                        <li class="footer__bottom-nav-item"><a href="#" data-block="schedule"
+                              class="footer__bottom-nav-link">Расписание
+                              автобусов</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="copyright">© 2023 Разработка сайтов в Туле - RUTEGO</div>
+            </div>
+
+         </div>
+
+
+
       </section>
    </div>
 
 
-   <!-- “defer” tells the browser to execute the script after the document has been parsed. -->
-   <script src="scripts/app.js" defer></script>
+
 </body>
 
 </html>
